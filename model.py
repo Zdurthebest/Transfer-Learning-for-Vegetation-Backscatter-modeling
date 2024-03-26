@@ -6,9 +6,6 @@
     1. DNN
     2. LSTM
 
-    Note that, although the layers are equal for both baseline networks, the total
-    number of the parameters of LSTM are larger than DNN, due to the unique structure.
-
     @author Zhudong
     @date   2023.5.24
 
