@@ -18,26 +18,6 @@
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, Dropout, Input, LSTM, ReLU
 
-
-def VegeBackscatCoefDnn():
-    inputs = Input(shape=(1, 9))
-    outputs = Dense(32, kernel_initializer='uniform')(inputs)
-    outputs = ReLU()(outputs)
-    outputs = Dropout(0.2)(outputs)
-    outputs = Dense(64, kernel_initializer='uniform')(outputs)
-    outputs = ReLU()(outputs)
-    outputs = Dropout(0.2)(outputs)
-    outputs = Dense(128, kernel_initializer='uniform')(outputs)
-    outputs = ReLU()(outputs)
-    outputs = Dropout(0.2)(outputs)
-    outputs = Dense(1)(outputs)
-    outputs = ReLU()(outputs)
-
-    model = Model(inputs=inputs, outputs=outputs, name="DNN")
-    model.summary()
-    return model
-
-
 def VegeBackscatCoefLstm():
     input = Input(shape=(9, 1))
     out = LSTM(32, return_sequences=True)(input)
@@ -57,6 +37,5 @@ def VegeBackscatCoefLstm():
 
 
 if __name__ == "__main__":
-    model1 = VegeBackscatCoefDnn()
-    model2 = VegeBackscatCoefLstm()
+    model = VegeBackscatCoefLstm()
 
